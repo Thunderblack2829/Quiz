@@ -20,7 +20,10 @@ Metodologia de Trabalho
 O projeto está sendo desenvolvido em equipe, adotando práticas ágeis com base no framework Scrum, onde os membros desempenham papéis específicos:
 
 Product Owner: Luiz Felipe, responsável por garantir que o produto atenda às necessidades dos usuários e o alinhamento com os requisitos do projeto.
+
 Scrum Master: Leonardo Maciel, que facilita o processo e remove impedimentos para que a equipe trabalhe de maneira eficiente.
+
 Outros membros da equipe incluem João Pedro Quadro, Leonardo de Barros e Pedro Maldonado, que colaboram no desenvolvimento do projeto.
+
 Meta Final
 A meta do projeto é entregar uma experiência digital interativa que estimule o aprendizado e o raciocínio dos usuários, permitindo que eles não apenas testem seus conhecimentos de maneira desafiadora e educativa, mas também personalizem suas próprias experiências de quiz, tornando o site uma ferramenta flexível e versátil para aprendizado e entretenimento.
