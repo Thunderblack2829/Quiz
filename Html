@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz com Ranking</title>
+     <link href="style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Bem-vindo ao Quiz!</h1>
+        <div id="start-screen">
+            <label for="username">Digite seu nome:</label>
+            <input type="text" id="username" placeholder="Seu nome">
+            <button id="start-quiz">Iniciar Quiz</button>
+        </div>
+
+        <div id="question-container" style="display: none;">
+            <p id="question"></p>
+            <div id="answers"></div>
+            <button id="next-question" style="display: none;">Próxima</button>
+        </div>
+
+        <div id="result-container" style="display: none;">
+            <p id="result"></p>
+            <button id="save-score">Salvar Pontuação</button>
+            <button id="restart-quiz">Reiniciar Quiz</button>
+        </div>
+
+        <div id="ranking-container" style="display: none;">
+            <h2>Ranking</h2>
+            <ol id="ranking-list"></ol>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
