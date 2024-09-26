@@ -1,0 +1,111 @@
+const questions = [
+    {
+        question: "Qual é a capital da França?",
+        answers: ["A) Paris", "B) Londres", "C) Berlim", "D) Madri"],
+        correct: 0
+    },
+    {
+        question: "Quanto é 2 + 2?",
+        answers: ["A) 3", "B) 4", "C) 5", "D) 6"],
+        correct: 1
+    },
+    {
+        question: "Quem escreveu 'Dom Quixote'?",
+        answers: ["A) Shakespeare", "B) Cervantes", "C) Tolstói", "D) Dante"],
+        correct: 1
+    }
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+let userName = '';
+
+const startScreen = document.getElementById('start-screen');
+const questionContainer = document.getElementById('question-container');
+const resultContainer = document.getElementById('result-container');
+const rankingContainer = document.getElementById('ranking-container');
+
+document.getElementById('start-quiz').addEventListener('click', () => {
+    userName = document.getElementById('username').value;
+    if (userName) {
+        startScreen.style.display = 'none';
+        questionContainer.style.display = 'block';
+        loadQuestion();
+    } else {
+        alert("Por favor, insira seu nome.");
+    }
+});
+
+function loadQuestion() {
+    document.getElementById('next-question').style.display = 'none';
+    const questionData = questions[currentQuestionIndex];
+    document.getElementById('question').textContent = questionData.question;
+
+    const answersDiv = document.getElementById('answers');
+    answersDiv.innerHTML = '';
+
+    questionData.answers.forEach((answer, index) => {
+        const answerDiv = document.createElement('div');
+        answerDiv.classList.add('answer');
+        
+        const button = document.createElement('button');
+        button.textContent = String.fromCharCode(65 + index);
+        button.addEventListener('click', () => checkAnswer(index));
+        
+        const answerText = document.createElement('span');
+        answerText.textContent = answer;
+        
+        answerDiv.appendChild(button);
+        answerDiv.appendChild(answerText);
+        
+        answersDiv.appendChild(answerDiv);
+    });
+}
+
+function checkAnswer(selectedIndex) {
+    const correctIndex = questions[currentQuestionIndex].correct;
+    if (selectedIndex === correctIndex) {
+        score += 5;
+    }
+
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        loadQuestion();
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    questionContainer.style.display = 'none';
+    resultContainer.style.display = 'block';
+    document.getElementById('result').textContent = `Você marcou ${score} pontos!`;
+
+    document.getElementById('save-score').addEventListener('click', saveScore);
+    document.getElementById('restart-quiz').addEventListener('click', () => {
+        window.location.reload();
+    });
+}
+
+function saveScore() {
+    const ranking = JSON.parse(localStorage.getItem('ranking')) || [];
+    ranking.push({ name: userName, score });
+    ranking.sort((a, b) => b.score - a.score);
+    localStorage.setItem('ranking', JSON.stringify(ranking));
+
+    showRanking(ranking);
+}
+
+function showRanking(ranking) {
+    resultContainer.style.display = 'none';
+    rankingContainer.style.display = 'block';
+
+    const rankingList = document.getElementById('ranking-list');
+    rankingList.innerHTML = '';
+
+    ranking.forEach((entry, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${index + 1}. ${entry.name} - ${entry.score} pontos`;
+        rankingList.appendChild(listItem);
+    });
+}
