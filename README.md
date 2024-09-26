@@ -1,7 +1,7 @@
-Objetivo
+Objetivo:
 O projeto consiste no desenvolvimento de um site interativo que oferece um quiz de perguntas gerais, abrangendo temas variados como história, ciências e cultura geral. Este quiz tem um caráter educativo e lúdico, proporcionando aos usuários uma forma divertida de aprender enquanto testam seus conhecimentos.
 
-Características Gerais
+Características Gerais:
 O quiz será desenvolvido utilizando HTML, CSS e JavaScript, sem a necessidade de um back-end, mantendo o foco na experiência do usuário diretamente no navegador. O site incluirá uma opção que permite ao usuário criar seu próprio quiz, adaptando-o conforme suas necessidades e interesses. O usuário começará inserindo um nickname, e ao final do quiz, poderá visualizar quantas perguntas acertou e sua pontuação total.
 
 Funcionalidades Específicas
