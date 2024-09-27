@@ -18,16 +18,16 @@ Este projeto é um site interativo que oferece um quiz de perguntas gerais, abra
 - **JavaScript**: Lógica do quiz, manipulação do DOM e criação de quizzes personalizados.
 
 ## Como Usar
--Ao acessar o site, insira seu nickname para iniciar o quiz.
--Responda às 20 perguntas que serão exibidas.
--No final do quiz, veja sua pontuação total e as perguntas que acertou.
--Para criar seu próprio quiz: Acesse a funcionalidade de criação de quiz.
--Insira suas próprias perguntas e respostas.
--Defina quais respostas são corretas e inicie o quiz personalizado.
+- **Ao acessar o site, insira seu nickname para iniciar o quiz**.
+- **Responda às 20 perguntas que serão exibidas**.
+- **No final do quiz, veja sua pontuação total e as perguntas que acertou**.
+- **Para criar seu próprio quiz: Acesse a funcionalidade de criação de quiz**.
+- **Insira suas próprias perguntas e respostas**.
+- **Defina quais respostas são corretas e inicie o quiz personalizado**.
 
 ## Membros da Equipe
--Luiz Felipe - Product Owner
--Leonardo Maciel - Scrum Master
--João Pedro Quadro - Desenvolvedor
--Leonardo de Barros - Desenvolvedor
--Pedro Maldonado - Desenvolvedor
+- **Luiz Felipe** - Product Owner
+- **Leonardo Maciel** - Scrum Master
+- **João Pedro Quadro** - Desenvolvedor
+- **Leonardo de Barros** - Desenvolvedor
+- **Pedro Maldonado** - Desenvolvedor
