@@ -1,39 +1,100 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz com Ranking</title>
-     <link href="style.css" type="text/css" rel="stylesheet"/>
+    <title>Quiz de Conhecimentos Gerais</title>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-    <div id="quiz-container">
-        <h1>Bem-vindo ao Quiz!</h1>
-        <div id="start-screen">
+    <div class="container">
+        <!-- Tela de entrada do nome do usuário -->
+        <div class="quiz-box" id="name-screen">
+            <h1>Bem-vindo ao Quiz!</h1>
             <label for="username">Digite seu nome:</label>
             <input type="text" id="username" placeholder="Seu nome">
-            <button id="start-quiz">Iniciar Quiz</button>
+            <button id="proceed" class="btn">Prosseguir</button>
         </div>
 
+        <!-- Tela para iniciar ou criar um quiz -->
+        <div class="quiz-box" id="selection-screen" style="display: none;">
+            <h1>Escolha uma opção</h1>
+            <button id="iniciarQuiz" class="btn">Iniciar o Quiz</button>
+            <button id="criarQuiz" class="btn">Criar um Quiz</button>
+        </div>
+
+        <!-- Tela para escolher o quiz pelo nome -->
+        <div class="quiz-box" id="select-quiz" style="display: none;">
+            <h1>Selecione um Quiz</h1>
+            <select id="quiz-list"></select>
+            <button id="start-selected-quiz">Iniciar Quiz Selecionado</button>
+        </div>
+
+        <!-- Área para criação de perguntas -->
+        <div class="quiz-box" id="create-quiz" style="display: none;">
+            <h1>Crie sua Pergunta</h1>
+            <form id="create-quiz-form">
+                <label for="question-input">Insira sua pergunta:</label>
+                <input type="text" id="question-input" placeholder="Insira sua pergunta" required><br><br>
+
+                <label>Escolha a resposta correta ao lado:</label><br><br>
+
+                <div class="option">
+                    <input type="radio" name="correct-answer" value="0" required>
+                    <input type="text" id="answerA" placeholder="Insira resposta A" required>
+                </div>
+                <div class="option">
+                    <input type="radio" name="correct-answer" value="1">
+                    <input type="text" id="answerB" placeholder="Insira resposta B" required>
+                </div>
+                <div class="option">
+                    <input type="radio" name="correct-answer" value="2">
+                    <input type="text" id="answerC" placeholder="Insira resposta C" required>
+                </div>
+                <div class="option">
+                    <input type="radio" name="correct-answer" value="3">
+                    <input type="text" id="answerD" placeholder="Insira resposta D" required>
+                </div>
+
+                <button type="submit" id="submit-question">Enviar Pergunta</button>
+            </form>
+
+            <div id="question-count">
+                Perguntas: <span id="question-counter">0</span>
+            </div>
+            <button id="finalize-quiz">Finalizar Quiz</button>
+        </div>
+
+        <!-- Área para nomear o quiz -->
+        <div class="quiz-box" id="name-quiz" style="display: none;">
+            <h1>Nomeie o Quiz</h1>
+            <input type="text" id="quiz-name" placeholder="Nome do Quiz">
+            <button id="save-quiz">Salvar Quiz</button>
+        </div>
+
+        <!-- Área de perguntas e respostas do quiz -->
         <div id="question-container" style="display: none;">
             <p id="question"></p>
             <div id="answers"></div>
             <button id="next-question" style="display: none;">Próxima</button>
         </div>
 
+        <!-- Exibição de resultado -->
         <div id="result-container" style="display: none;">
             <p id="result"></p>
             <button id="save-score">Salvar Pontuação</button>
             <button id="restart-quiz">Reiniciar Quiz</button>
         </div>
 
+        <!-- Ranking -->
         <div id="ranking-container" style="display: none;">
             <h2>Ranking</h2>
             <ol id="ranking-list"></ol>
         </div>
-    </div>
 
+        <img src="Detetive.png" alt="Detetive" class="detetive">
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
-
