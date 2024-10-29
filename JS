@@ -109,6 +109,10 @@ document.getElementById('save-quiz').addEventListener('click', function() {
     }
 });
 
+document.getElementById('voltar').addEventListener('click', () => {
+    window.location.reload();
+});
+
 // Criar uma pergunta e adicioná-la ao quiz atual
 document.getElementById('create-quiz-form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -153,7 +157,6 @@ function showRanking() {
 const rankingContainer = document.getElementById('ranking-container');
 const rankingList = document.getElementById('ranking-list');
 rankingList.innerHTML = '';
-
 const scoreList = JSON.parse(localStorage.getItem('scores')) || [];
 scoreList.forEach((entry, index) => {
     const listItem = document.createElement('li');
