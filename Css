@@ -73,10 +73,8 @@ button:hover {
 
 .detetive {
     position: absolute;
-    align-items: center;
-    bottom: 50px;
-    right: 0;
-    width: 150px;
-    left: 50px;
-    top: 10px;
+    top: 55%;      /* Aumentei o valor para mover a imagem mais para baixo */
+    left: 65%;     /* Mantém o deslocamento para a direita */
+    transform: translate(-50%, -50%); /* Centraliza a imagem com base em seu próprio ponto central */
+    width: 150px;  /* Tamanho da imagem */
 }
