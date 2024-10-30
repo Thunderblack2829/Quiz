@@ -93,21 +93,28 @@ function showResults() {
 
 // Finalizar a criação do quiz e nomeá-lo
 document.getElementById('finalize-quiz').addEventListener('click', function() {
-    document.getElementById('create-quiz').style.display = 'none';
-    document.getElementById('name-quiz').style.display = 'block';
+    // Verifica se o usuário criou ao menos uma pergunta
+    if (currentQuiz.length === 0) {
+        alert("Por favor, adicione pelo menos uma pergunta antes de finalizar o quiz.");
+    } else {
+        document.getElementById('create-quiz').style.display = 'none';
+        document.getElementById('name-quiz').style.display = 'block';
+    }
 });
 
 document.getElementById('save-quiz').addEventListener('click', function() {
     const quizName = document.getElementById('quiz-name').value;
+    // Verifica se o nome do quiz está preenchido e se há perguntas no quiz
     if (quizName && currentQuiz.length > 0) {
         quizzes[quizName] = currentQuiz;
         localStorage.setItem('quizzes', JSON.stringify(quizzes));
         alert("Quiz salvo com sucesso!");
         window.location.reload();
     } else {
-        alert("Por favor, insira um nome para o quiz.");
+        alert("Por favor, insira um nome para o quiz e adicione ao menos uma pergunta.");
     }
 });
+
 
 document.getElementById('voltar').addEventListener('click', () => {
     window.location.reload();
@@ -146,29 +153,34 @@ document.getElementById('create-quiz-form').addEventListener('submit', function(
 
 // Salvar a pontuação e reiniciar o quiz
 document.getElementById('save-score').addEventListener('click', function() {
-const scoreList = JSON.parse(localStorage.getItem('scores')) || [];
-scoreList.push({ name: userName, score: score });
-scoreList.sort((a, b) => b.score - a.score); // Ordena o ranking por pontuação
-localStorage.setItem('scores', JSON.stringify(scoreList));
-showRanking();
+    const scoreList = JSON.parse(localStorage.getItem('scores')) || [];
+    scoreList.push({ name: userName, score: score });
+    scoreList.sort((a, b) => b.score - a.score); // Ordena o ranking por pontuação
+    localStorage.setItem('scores', JSON.stringify(scoreList));
+    showRanking();
 });
 
 function showRanking() {
-const rankingContainer = document.getElementById('ranking-container');
-const rankingList = document.getElementById('ranking-list');
-rankingList.innerHTML = '';
-const scoreList = JSON.parse(localStorage.getItem('scores')) || [];
-scoreList.forEach((entry, index) => {
-    const listItem = document.createElement('li');
-    listItem.textContent = `${index + 1}. ${entry.name} - ${entry.score} pontos`;
-    rankingList.appendChild(listItem);
-});
+    const rankingContainer = document.getElementById('ranking-container');
+    const rankingList = document.getElementById('ranking-list');
+    rankingList.innerHTML = '';
+    const scoreList = JSON.parse(localStorage.getItem('scores')) || [];
+    console.log(scoreList)
+    scoreList.forEach((entry, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${index + 1}. ${entry.name} - ${entry.score} pontos`;
+        rankingList.appendChild(listItem);
+    });
 
-document.getElementById('result-container').style.display = 'none';
-rankingContainer.style.display = 'block';
+    document.getElementById('result-container').style.display = 'none';
+    rankingContainer.style.display = 'block';
 }
+
+document.getElementById('voltar1').addEventListener('click', () => {
+    window.location.reload();
+});
 
 // Reiniciar o quiz
 document.getElementById('restart-quiz').addEventListener('click', function() {
-window.location.reload();
+    window.location.reload();
 });
