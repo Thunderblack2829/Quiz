@@ -77,6 +77,14 @@ form {
     margin-left: 10px;
 }
 
+#quiz-list{
+    width: 80%;
+    height: 30px;
+    color: #000;
+    background-color: #c9bae6;
+    border-radius: 5px;
+}
+
 button {
     padding: 15px 30px; /* Botão maior */
     background-color: #5b2db0;
@@ -112,3 +120,4 @@ button:hover {
     transform: translate(-50%, -50%); /* Centraliza a imagem com base em seu próprio ponto central */
     width: 300px;  /* Tamanho da imagem */
 }
+
