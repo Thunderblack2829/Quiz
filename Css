@@ -52,13 +52,20 @@ form {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 15px 30px; /* Botão maior */
     background-color: #5b2db0;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    width: 100%; /* Largura total da div */
+    display: block; /* Faz com que o botão ocupe a largura total e fique em uma linha separada */
+    font-size: 16px; /* Tamanho da fonte maior */
+}
+
+button:hover {
+    background-color: #45238a;
 }
 
 button:hover {
