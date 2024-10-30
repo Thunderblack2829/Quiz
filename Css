@@ -11,7 +11,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 }
+
 
 .quiz-box, #result-container{
     background-color: #d0b3f3;
@@ -24,24 +26,26 @@ body {
     border: 2px solid #000000;
 }
 
-.quiz-box, #question-container{
+ #question-container {
     background-color: #d0b3f3;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 350px;
-    height: 300px;
     position: relative;
     border: 2px solid #000000;
+    min-height: 300px; /* Define uma altura mínima para garantir um layout consistente */
+    height: auto; /* Permite que a altura aumente conforme o conteúdo */
 }
 
-.quiz-box, #name-screen{
+
+#name-screen{
     background-color: #d0b3f3;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 350px;
-    height: 200px;
+    height: 170px;
     position: relative;
 }
 
@@ -113,9 +117,36 @@ button:hover {
     color: #333;
 }
 
+#ranking-container {
+    background-color: #d0b3f3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    position: relative;
+    border: 2px solid #000000;
+    max-height: 100vh; /* Define uma altura máxima para evitar que cresça indefinidamente */
+    overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo exceder a altura máxima */
+}
+
+#voltar1 {
+    padding: 15px 30px; /* Botão maior */
+    background-color: #5b2db0;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%; /* Largura total da div */
+    font-size: 16px; /* Tamanho da fonte maior */
+    position: relative; /* Mudança para deixar o botão relativo, pois o container pode aumentar de tamanho */
+}
+
+
+
 .detetive {
     position: absolute;
-    top: 55%;      /* Aumentei o valor para mover a imagem mais para baixo */
+    top: 57%;      /* Aumentei o valor para mover a imagem mais para baixo */
     left: 70%;     /* Mantém o deslocamento para a direita */
     transform: translate(-50%, -50%); /* Centraliza a imagem com base em seu próprio ponto central */
     width: 300px;  /* Tamanho da imagem */
